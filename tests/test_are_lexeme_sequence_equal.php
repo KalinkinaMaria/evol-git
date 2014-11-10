@@ -74,31 +74,30 @@ class qtype_correctwriting_are_lexeme_sequence_equal_test_utils {
 class qtype_correctwriting_are_lexeme_sequence_equal_test extends PHPUnit_Framework_TestCase {
 
     /**
-     *  Test equal sensitive with insensitiive case
-     */
-    public function test_equal_insensitive() {
-        $t = new qtype_correctwriting_are_lexeme_sequence_equal_test_utils($this);
-        $t->test_with_english(false, true, 'Those sequences are equal', 'those sequences are equal');
-        $q = new qtype_correctwriting_question();
-        $q->usecase = false;
-    }
-
-    /**
      *  Test non-equal sensitive with insensitiive case
      */
     public function test_non_equal_insensitive() {
         $t = new qtype_correctwriting_are_lexeme_sequence_equal_test_utils($this);
         $t->test_with_english(false, false, 'Those sequences are equal', 'those sequences aren\'t equal');
         $q = new qtype_correctwriting_question();
-        $q->usecase = false;
     }
 
     /**
      *  Test equal sensitive with sensitiive case
      */
     public function test_equal_sensitive() {
-        $t = new qtype_correctwriting_are_lexeme_sequence_equal_test_utils($this);
         $t->test_with_english(true, true, 'those sequences are equal', 'those sequences are equal');
+        $q = new qtype_correctwriting_question();
+        $t = new qtype_correctwriting_are_lexeme_sequence_equal_test_utils($this);
+        $q->usecase = false;
+    }
+
+    /**
+     *  Test equal sensitive with insensitiive case
+     */
+    public function test_equal_insensitive() {
+        $t = new qtype_correctwriting_are_lexeme_sequence_equal_test_utils($this);
+        $t->test_with_english(false, true, 'Those sequences are equal', 'those sequences are equal');
         $q = new qtype_correctwriting_question();
         $q->usecase = false;
     }

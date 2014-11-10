@@ -73,14 +73,6 @@ require_once($CFG->dirroot.'/blocks/formal_langs/language_simple_english.php');
         $state = $question->grade_response(array('answer' => 'a data'));
         $this->assertEquals($state[0],0.4);
     }
-    //  Test fully incorrect response
-    public function test_incorrect_response() {
-       $question = clone $this->question;
-       $answers = array((object)array('id' => 1, 'answer' => 'a data template', 'fraction' => 1.0));
-       $question->answers = $answers;
-       $state = $question->grade_response(array('answer' => 'test'));
-       $this->assertEquals($state[0],0.0);
-    }
     // Test when non-exact match with higher mark is preferred over exact match
     public function test_non_exact_over_exact_match() {
         $question = clone $this->question;
