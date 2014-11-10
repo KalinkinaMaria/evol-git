@@ -1,17 +1,5 @@
 <?php
 
-/**
- * Defines class of abstract analyzer for correct writing question.
- *
- * Abstract analyzer class defines an interface any analyzer should implement.
- * Analyzers have state, i.e. for each analyzed pair of strings there will be differrent analyzer
- *
- * @copyright &copy; 2013  Oleg Sychev
- * @author Oleg Sychev, Volgograd State Technical University
- * @license http://www.gnu.org/copyleft/gpl.html GNU Public License
- * @package questions
- */
-
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot.'/question/type/correctwriting/string_pair.php');
