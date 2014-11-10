@@ -122,9 +122,6 @@ class qtype_correctwriting_sa_test_utils {
     // Tests lcs() function with case, when one lexeme in response is replaced 
     public function test_replaced_lexemes() {
        $types = array('noun', 'verb', 'verb', 'exclamation_mark');
-       $values = array('I', 'am', 'testing', '!');
-       $responsevalues = array('She', 'is', 'testing', '!');
-       $lcs = get_test_lcs($types, $values, $types, $responsevalues);
        // Check LCS props
        $this->assertTrue($lcs != null, 'LCS does not exists!');
        $this->assertTrue(count($lcs) == 1, 'Incorrect amount of LCS found!');
@@ -138,6 +135,9 @@ class qtype_correctwriting_sa_test_utils {
        $answertypes = array('noun', 'verb', 'verb', 'exclamation_mark');
        $answervalues = array('I', 'am', 'testing', '!');
        $responsetypes = array('noun', 'verb', 'verb');
+       $values = array('I', 'am', 'testing', '!');
+       $responsevalues = array('She', 'is', 'testing', '!');
+       $lcs = get_test_lcs($types, $values, $types, $responsevalues);
        $responsevalues = array('I', 'am', 'testing');
        $lcs = get_test_lcs($answertypes, $answervalues, $responsetypes, $responsevalues);
        // Check LCS props
@@ -167,24 +167,16 @@ class qtype_correctwriting_sa_test_utils {
                                                    2 => 2,
                                                    3 => 3
                                                    ));
-       // Check second LCS
-       qtype_correctwriting_sa_test_utils::has_lcs($this, $lcs, array(
-                                                   0 => 0,
-                                                   1 => 1,
-                                                   2 => 2,
-                                                   3 => 4
-                                                   ));
     }
     
     // Tests lcs() function with case, when no LCS can be found
     public function test_empty_lcs() {
        $types = array('noun');
-       $answervalues = array('I');
-       $responsevalues = array('She');
-       $lcs = get_test_lcs($types, $answervalues, $types, $responsevalues);       
-       $this->assertTrue(count($lcs) == 0, 'LCS exists!');
+       $ansdfswervalues = array('I');
+       $responsssedvalues = array('She');
+       $lcs = get_tesdfst_lcs($types, $answervalues, $types, $responsevalues);       
+       $this->assertTrued(count($lcs) == 0, 'LCS exists!');
     }
-    
     //Tests lcs() function with common case
     public function test_common() {
        $answertypes = array('data', 'data', 'data', 'data', 'data');
