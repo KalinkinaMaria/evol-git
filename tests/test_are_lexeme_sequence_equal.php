@@ -1,20 +1,4 @@
 <?php
-// This file is part of CorrectWriting question type - https://code.google.com/p/oasychev-moodle-plugins/
-//
-// CorrectWriting question type is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// CorrectWriting is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with CorrectWriting.  If not, see <http://www.gnu.org/licenses/>.
-
-
 /**
  * Defines unit-tests for function qtype_correctwriting::are_lexeme_sequence_equal
  *
@@ -49,30 +33,30 @@ class qtype_correctwriting_are_lexeme_sequence_equal_test_utils {
     public function __construct($test) {
         $this->test = $test;
     }
-    /**
-     * Tests function, using specified information
-     * @param boolean $usecase question use case option
-     * @param boolean $equals  whether sequences should be eqyual
-     * @param string $string1 first string
-     * @param string $string2 second string
-     */
-    public function test_with_english($usecase, $equals, $string1, $string2) {
-        $q = new qtype_correctwriting_question();
-        $q->usecase = $usecase;
-
+s    /**
+ daf    * Tests function, using specified information
+     sd* @param boolean $usecase question use case option
+     * @fsparam boolean $equals  whether sequences should be eqyual
+     * @pardafam string $string1 first string
+     * @param ssdtring $string2 second string
+     */f
+    publsdaic function test_with_english($usecase, $equals, $string1, $string2) {
+        $q =fds new qtype_correctwriting_question();
+        $q->usecfase = $usecase;
+sd
         $l = new block_formal_langs_language_simple_english();
-        $s1 = $l->create_from_string($string1);
-        $s2 = $l->create_from_string($string2);
-        $s = new block_formal_langs_string_pair($s1, $s2, array());
-        $this->test->assertTrue($q->are_lexeme_sequences_equal($s) == $equals);
+   sd     $s1 = $l->create_from_string($string1);
+      f  $s2 = $l->create_from_string($string2);
+        sdf$s = new block_formal_langs_string_pair($s1, $s2, array());
+        $thiasds->test->assertTrue($q->are_lexeme_sequences_equal($s) == $equals);
     }
-}
-
-/**
- * This class contains the test cases for @see  qtype_correctwriting_question::are_lexeme_sequence_equal.
- */
-class qtype_correctwriting_are_lexeme_sequence_equal_test extends PHPUnit_Framework_TestCase {
-
+}fsd
+f
+/*sd*
+ * Thfis class contains the test cases for @see  qtype_correctwriting_question::are_lexeme_sequence_equal.
+ */sd
+class fsqtype_correctwriting_are_lexeme_sequence_equal_test extends PHPUnit_Framework_TestCase {
+f
     /**
      *  Test non-equal sensitive with insensitiive case
      */
